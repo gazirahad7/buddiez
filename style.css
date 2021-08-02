@@ -1,0 +1,385 @@
+* {
+  box-sizing: border-box;
+}
+
+/* :root {
+  --modal-duration: 1s;
+  --primary-color: #30336b;
+  --secondary-color: #be2edd;
+} */
+
+body {
+
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+nav{
+  background: #fff;
+  padding-top: 10px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0px .5px 3px rgba(0, 0, 0, 0.1);
+}
+.my-nav{
+    display: block;
+  }
+nav i{
+  font-size: 25px;
+  color: rgb(104, 99, 99);
+}
+
+* a {
+  text-decoration: none;
+}
+
+button:focus,
+button:hover {
+  outline: 0 !important;
+  border: 0 !important;
+}
+
+/*==========Start==========*/
+
+/*========== Reuseable class==========*/
+
+#register-form,
+#logoutBtn,
+#post-section-block {
+  display: none;
+}
+
+img {
+  height: 400px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(21, 75, 252, 0.993);
+}
+
+p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.comment-div {
+  display: none;
+}
+
+.my-form {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  width: 400px;
+}
+
+.my-jcc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+form input {
+  border-radius: 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  width: 100%;
+}
+
+form input small {
+  margin: 0;
+  padding: 0;
+  float: left !important;
+  text-align: start !important;
+}
+
+.login,
+.logout,
+.reg-btn {
+  background-color: rgba(77, 118, 255, 0.993);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.logout {
+  display: none;
+}
+
+.account-btn {
+  background-color: rgb(13, 214, 13);
+  border-radius: 7px;
+  padding: 10px 12px;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 70px;
+}
+#want-login-btn {
+  margin: 0 125px;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/*==========Start==========*/
+
+/*==========Style of Post section==========*/
+
+.post-form {
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 13px;
+  border-radius: 6px;
+}
+
+.upload-post {
+  margin: 16px 0;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  border: 0.5px solid #ddd;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+i.profile {
+  background: #eee;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  margin-right: 5px;
+  color: rgb(30, 16, 214);
+}
+
+.upload-post .time {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.upload-post p {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 5px 10px;
+  color: #000;
+  word-break: break-all;
+}
+
+/*==========END==========*/
+
+/*==========Start==========*/
+
+/*==========Style of 3 dot section==========*/
+
+/*==========END==========*/
+
+/*==========Start==========*/
+
+/*==========Style of Modal==========*/
+
+.upload-post .dropdown {
+  border: none;
+}
+
+.my-custom-dot {
+  float: right;
+  margin-right: 0;
+}
+
+.my-custom-dot i {
+  float: right;
+}
+
+/* #open button{
+  background-color: #be2edd;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+} */
+
+/* 
+.ctn-btn {
+  padding: 12px 30px;
+  font-size: 20px;
+} */
+
+.my-modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.my-modal {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+  -webkit-animation-name: modalopen;
+          animation-name: modalopen;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.my-modal-header {
+  background: #4a68ee;
+  color: #fff;
+  padding: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid #333;
+}
+
+.my-modal-content {
+  padding: 20px;
+}
+
+.close-btn {
+  color: #fff;
+  background: transparent;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.post-can-del {
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+#post-cancel {
+  border-right: 2px solid #ddd;
+}
+
+.my-modal-container.show-modal {
+  display: block;
+}
+
+@-webkit-keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*==========END==========*/
+
+.liked {
+  font-size: bold;
+  color: royalblue;
+  transform: scale(1.3);
+}
+
+/*==========Start==========*/
+
+/*==========Style of Post  section==========*/
+
+.post-btn {
+  width: 28%;
+  text-align: center;
+  background-color: rgb(72, 103, 243);
+  color: #fff;
+}
+
+/*==========END==========*/
+
+/*==========Start==========*/
+
+/*==========Style of Post Comment section==========*/
+
+.comment-body {
+  margin: 20px 0;
+}
+
+.cmt-text {
+  background-color: rgb(230, 228, 228);
+  border-radius: 8px;
+}
+
+.cmt-like {
+  border: none;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(92, 91, 91);
+  font-size: 12px;
+  background-color: #fff;
+  margin-top: -16px;
+}
+
+.cmt-reply {
+  margin-top: -16px;
+  border: none;
+  margin-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(92, 91, 91);
+  font-size: 12px;
+  background-color: #fff;
+}
+
+.comment-box {
+  border-radius: 20px;
+}
+
+.cmter-name {
+  margin-left: 10px;
+}
+
+.comment-submit {
+  background-color: rgb(72, 103, 243);
+  color: #fff;
+  font-weight: bold;
+  width: 25%;
+  text-align: center;
+  max-width: 100%;
+}
+
+.time {
+  float: right;
+  margin-left: 30px;
+}
+
+.comt-count {
+  margin-left: 2px;
+  font-weight: bold;
+  font-size: 16px;
+  color: royalblue;
+}
+
+/*==========END==========*/
